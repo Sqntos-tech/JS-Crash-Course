@@ -78,3 +78,87 @@ for (let i = 1; i < 20; i++) {
 for (let i = 0; i < str.length; ++i) {
     console.log(str[i])
 } }
+
+
+{let users = [
+    {
+    username: "Edward",
+    email: "edwardsantos1237@gmail.com",
+    password: "test123",
+    subscriptionStatus: "VIP",
+    discord: "sqntos",
+    lessonCompleted: [0, 1],
+    }
+];
+
+function login(email,password) {
+    for (let i = 0; i < users.length; ++i) {
+        if (users[i].email === email) {
+            if (users[i].password === password) {
+                console.log('log the user in - the details are correct')
+            }
+            else {
+                console.log('password is incorrect')
+            }
+            return;
+        }
+    }
+    console.log('could not find an email that matches')
+}
+
+login('edwardsantos1237@gmail.com', 'test123')
+}
+
+//note.
+
+{let users = [
+    {
+    username: "Edward",
+    email: "edwardsantos1237@gmail.com",
+    password: "test123",
+    subscriptionStatus: "VIP",
+    discord: "sqntos",
+    lessonCompleted: [0, 1],
+    }
+];
+
+
+function register(user) {
+    users.push(user);
+}
+
+register({
+    username: "Edward", 
+    email: "edwardsantos1237@gmail.com", 
+    password: "test123", 
+    subscriptionStatus: "VIP",
+    discord: "discord",
+    lessonsCompleted: [0, 1]
+});
+
+console.log(users);
+}
+
+//note.
+
+//HOW TO ACCESS ANY ELEMENT IN THE DOM
+//first way of accessing an element *****
+console.log(document.querySelector('#title'));
+// IF ITS A (class) INSTEAD OF A (id)console.log(document.querySelector(.title));
+//Or a (h1)
+
+
+//second way of accessing an element
+console.log(document.getElementById('title'));
+
+//HOW TO CHANGE THE HTML OF ANY ELEMENT THAT YOU WANT IN THE DOM
+document.querySelector('#title2').innerHTML = 'Frontend Simplified'
+//add a (+ to the =) if i want the innerHTML on top of the h1
+
+//HOW TO CHANGE CSS
+document.querySelector('#title2').style.color = 'green'
+
+function changeTitleToGreen() {
+    document.querySelector("#title2").style.color = green
+    console.log('clicked');
+}
