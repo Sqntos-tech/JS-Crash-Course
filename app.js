@@ -143,7 +143,7 @@ console.log(users);
 
 //HOW TO ACCESS ANY ELEMENT IN THE DOM
 //first way of accessing an element *****
-console.log(document.querySelector('#title'));
+{console.log(document.querySelector('#title'));
 // IF ITS A (class) INSTEAD OF A (id)console.log(document.querySelector(.title));
 //Or a (h1)
 
@@ -161,4 +161,81 @@ document.querySelector('#title2').style.color = 'green'
 function changeTitleToGreen() {
     document.querySelector("#title2").style.color = green
     console.log('clicked');
+}}
+
+//notes 7/21/26
+
+function toggleDarkMode() {
+    document.querySelector('body').classList.toggle("dark-theme")
+}
+
+//How to fetch this data "https"
+// fetch("https://jsonplaceholder.typicode.com/users/1")
+const emailRef = document.querySelector(".email");
+
+
+// 1. Then
+{fetch("https://jsonplaceholder.typicode.com/users/1")
+  .then(response => {
+    return response.json()
+  })
+  .then(data => {
+    console.log(data)
+
+  })
+
+//2. Async/Await
+async function main() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users/1")
+    const data = await response.json()
+    console.log(data)
+
+}
+
+main()}
+
+//notes 7/21/26
+{const statusRef = document.querySelector('.status')
+ const videoRef = document.querySelector('.video')
+function getSubscriptionStatus() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("undifined")
+        }, 2000);
+        
+    })
+}
+
+// 1. Then
+// getSubscriptionStatus().then(response => console.log(response))
+
+// 2. Async/Await
+async function main() {
+    const status = (await getSubscriptionStatus())
+    statusRef.innerHTML = status;
+    try {
+    console.log(await getVideo(status)) //part of challenge
+    }
+    catch (e) {
+        console.log(e)
+        videoRef.innerHTML = e; 
+    }
+}
+
+main()}
+
+//Challenge 7/21
+
+function getVideo(subscriptionStatus) {
+    return new Promise((resolve, reject) => {
+        if (subscriptionStatus === "VIP") {
+            resolve("show video")
+        }
+        else if (subscriptionStatus === "FREE") {
+            resolve("show trailer")
+        }
+        else {
+            reject("no video")
+        }
+    })
 }
