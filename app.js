@@ -224,9 +224,9 @@ async function main() {
 
 main()}
 
-//Challenge 7/21
+//Challenges 7/21
 
-function getVideo(subscriptionStatus) {
+{function getVideo(subscriptionStatus) {
     return new Promise((resolve, reject) => {
         if (subscriptionStatus === "VIP") {
             resolve("show video")
@@ -238,4 +238,147 @@ function getVideo(subscriptionStatus) {
             reject("no video")
         }
     })
+}}
+
+//notes 7/22/26 
+// Beginner
+
+//Sum of two numbers
+function addition(num1, num2) {
+    return num1 + num2
 }
+console.log(addition(3, 5));
+
+
+//convert hours to seconds
+function hoursIntoSeconds(hour) {
+    return hour * 60 * 60
+}
+console.log(hoursIntoSeconds(2));
+
+
+//perimeter of a rectangle 
+function calcPerimeter(length, width) {
+    return 2 * length + 2 * width
+}
+console.log(calcPerimeter(10, 20))
+
+
+//area of triangle 
+function calcAreaOfTriangle(base, height) {
+    return 0.5 * base * height
+}
+console.log(calcAreaOfTriangle(20, 20))
+
+
+//extend a string
+function appendFrontend(string) {
+    return string + 'Frontend'
+}
+console.log(appendFrontend('apple'))
+
+
+//greater than 100
+function sumGreaterThan100(num1, num2) {
+    return num1 + num2 > 100
+}
+console.log(sumGreaterThan100(50, 60))
+
+
+// less than or equal to zero
+function lessThanOrEqualToZero(num) {
+    return num <= 0
+}
+console.log(lessThanOrEqualToZero(-2))
+
+
+//opposite boolean
+function oppositeBoolean(bool) {
+    return !bool
+}
+console.log(oppositeBoolean('false'))
+
+
+//is not the number 0
+function isNotZero(num) {
+    return num !== 0
+}
+console.log(isNotZero(null))
+
+
+//calculate the remainder 
+function calcRemainder(num1, num2) {
+    return num1 % num2 
+}
+console.log(calcRemainder(9,8))
+
+
+//is the number odd
+function isOdd(num) {
+    return num % 2 !== 0
+}
+console.log(isOdd(7))
+
+
+//if number is even return 1, otherwise -1
+function booleanInteger(num) {
+    return num % 2 === 0 ? 1 : -1
+}
+console.log(booleanInteger(5))
+
+
+//if is logged in and subscribed return true
+function isLoggedAndSubscribed(loggedIn, subscribed) {
+    return (loggedIn === 'LOGGED_IN') && (subscribed === 'SUBSCRIBED')
+}
+console.log(isLoggedAndSubscribed('LOGGED_IN', 'SUBSCRIBED'))
+
+
+//if is logged in or subscribed return true
+function isLoggedAndSubscribed(loggedIn, subscribed) {
+    return (loggedIn === 'LOGGED_IN') || (subscribed === 'SUBSCRIBED')
+}
+console.log(isLoggedAndSubscribed('LOGGED_OUT', 'SUBSCRIBED'))
+
+
+
+//Medium
+
+function filterOutTruthy(elem1, elem2) {
+    return !elem1 ? elem1 : elem2
+}
+console.log(filterOutTruthy(null,5))
+
+
+//return the length of any given array
+function arrLength(arr) {
+    return arr.length
+}
+console.log(arrLength([1, 2, 3]))
+
+
+//get last elem in an array
+function arrLength(arr) {
+    return arr[arr.length -1]
+}
+console.log(arrLength([0, 1, 2, 3]))
+
+
+//find the sum of an array
+//this is how you loop through every element in an array
+function arrSum(arr) {
+    for (let i = 0; i < arr.length; ++i) {
+        console.log(arr[i])
+    }
+}
+console.log(arrSum([1, 2, 3, 4, 5]))
+
+//sum of the array
+function arrSum(arr) {
+    let sum = 0
+    for (let i = 0; i < arr.length; ++i) {
+        sum = sum + arr[i]
+    }
+    return sum;
+}
+console.log(arrSum([2, 2, 2]))
