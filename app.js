@@ -382,3 +382,140 @@ function arrSum(arr) {
     return sum;
 }
 console.log(arrSum([2, 2, 2]))
+
+
+//add up the numbers from a single number
+function progressiveSum(num) {
+    let sum = 0
+    for (let i = 1; i <= num; ++i) {
+        sum = sum + i;
+    }
+    return sum
+}
+console.log(progressiveSum(3));
+
+
+//7/23/26
+//calculate the time
+function calcTime(seconds) {
+    let timerMinutes = Math.floor(seconds / 60)
+    let timerSeconds = seconds % 60
+
+    if (timerMinutes.toString().length === 1) {
+        timerMinutes = '0' + timerMinutes
+    }
+
+    return timerMinutes + ':' + timerSeconds
+}
+console.log(calcTime(500))
+
+
+//fine the largest number 
+function getMax(arr) {
+    let max = arr[0];
+    for (let i = 0; i < arr.length; ++i) {
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+    return max
+}
+console.log(getMax([20, 60, -5]))
+
+
+//reverse a string
+function reverseString(str) {
+    let reversedString = '';
+    for (let i = 0; i < str.length; ++i) {
+        reversedString = str[i] + reversedString; 
+    }
+    return reversedString
+}
+console.log(reverseString('abc'))
+
+// only an array can have a .reverse() property 
+//ex: ['a', 'b', 'c'].reverse() *DOSE WORK*
+//not a string
+//ex:'abc'.reverse() *WONT WORK*
+//HOW TO CONVERT A STRING TO AN ARRAY
+//'abc'.split('') makes it an array ['a', 'b', 'c']
+//then you can reverse it 'abc'.split('').reverse() and get ['c', 'b', 'a']
+//you can add .join('') to bring it back to a string
+//ex: 'abc'.split('').reverse().join('') and get 'cba'
+
+function reverseString(str) {
+   return str.split('').reverse().join('');
+}
+console.log(reverseString('Edward'))
+
+
+//turn every element in an array to 0
+// 1. For loop                  *SECOND MOST USED*
+function convertToZero(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; ++i) {
+        newArr[i] = 0
+    }
+    return newArr
+}
+console.log(convertToZero([7, 300, 456]))
+
+//another way
+// 2. Array 'fill'                *BARELY USED*
+function convertToZero(arr) {
+    return new Array(arr.length).fill(0);
+}
+console.log(convertToZero([1, 2, 3, 4, 5, 6]))
+
+//third way
+// 3. Array 'map'                 *MOST USED*
+function convertToZero(arr) {
+    return arr.map(elem => 0);
+}
+console.log(convertToZero([1, 2, 3, 4]))
+
+
+//filter out all the apples
+// 1. For loop
+function removeApples(arr) {
+    let noApples = []
+    for (let i = 0; i < arr.length; ++i) {
+        if (arr[i] !== 'Apple') {
+            noApples.push(arr[i]);
+        }
+    }
+    return noApples
+}
+console.log(removeApples(['Banana', 'Apple', 'Orange', 'Apple']))
+
+// 2. Array 'filter'
+function removeApples(arr) {
+    return arr.filter(elem => elem !== 'Apple')
+}
+console.log(removeApples(['Banana', 'Apple', 'Orange', 'Apple', 'Tomato']))
+
+
+//filter out all the falsy values 
+function filterOutFalsy(arr) {
+    return arr.filter(elem => !!elem === true)
+}
+console.log(filterOutFalsy(['apples', null, '', 0, 500 ]))
+
+//for loop
+function filterOutFalsy(arr) {
+    let truthyArr = []
+    for (let i = 0; i < arr.length; ++i) {
+        if (!!arr[i] === true) {
+            truthyArr.push(arr[i])
+        }
+    }
+    return truthyArr
+}
+console.log(filterOutFalsy(['apples', null, '', 0, 500 ]))
+
+
+//truthy to true and falsy to false
+function convertToBoolean(arr) {
+    return arr.map(elem => !!elem)
+}
+console.log(convertToBoolean([500, 0, 'Edward', "", []]))
